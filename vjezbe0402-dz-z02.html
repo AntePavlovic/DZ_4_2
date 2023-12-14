@@ -1,0 +1,22 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+
+</head> 
+  
+<body> 
+
+<button onclick="changeColor()">Promijeni pozadinu</button>
+<p>Trenutna boja pozadine je: #<span id="color">FFFFFF</span></p>
+
+<script> 
+function changeColor() {
+			var color = Math.floor(Math.random()*16777215).toString(16);
+			document.body.style.backgroundColor = "#" + color;
+			document.getElementById("color").innerHTML = color.toUpperCase();
+		}
+</script> 
+</body> 
+  
+</html>

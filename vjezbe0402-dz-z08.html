@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On-line kalkulator</title>
+	<meta charset="UTF-8">
+	<script>
+		function izracunaj() {
+			var broj1 = parseFloat(document.getElementById("broj1").value);
+			var broj2 = parseFloat(document.getElementById("broj2").value);
+			var operacija = document.getElementById("operacija").value;
+			var rezultat;
+			switch (operacija) {
+				case "+":
+					rezultat = broj1 + broj2;
+					break;
+				case "-":
+					rezultat = broj1 - broj2;
+					break;
+				case "*":
+					rezultat = broj1 * broj2;
+					break;
+				case "/":
+					rezultat = broj1 / broj2;
+					break;
+				case "sin":
+					rezultat = Math.sin(broj1);
+					break;
+				case "cos":
+					rezultat = Math.cos(broj1);
+					break;
+				case "tan":
+					rezultat = Math.tan(broj1);
+					break;
+				case "ln":
+					rezultat = Math.log(broj1);
+					break;
+				case "log":
+					rezultat = Math.log10(broj1);
+					break;
+				case "x^2":
+					rezultat = Math.pow(broj1, 2);
+					break;
+				case "x^3":
+					rezultat = Math.pow(broj1, 3);
+					break;
+				case "x^y":
+					rezultat = Math.pow(broj1, broj2);
+					break;
+				default:
+					alert("Nepoznata operacija.");
+					return;
+			}
+			alert("Rezultat: " + rezultat);
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="broj1">Broj 1:</label>
+		<input type="number" id="broj1" name="broj1" required>
+		<br>
+        <label for="broj2">Broj 2:</label>
+		<input type="number" id="broj2" name="broj2" required>
+		<br>
+		<label for="operacija">Operacija:</label>
+		<select id="operacija" name="operacija" required>
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="sin">sin</option>
+			<option value="cos">cos</option>
+			<option value="tan">tan</option>
+			<option value="ln">ln</option>
+			<option value="log">log</option>
+			<option value="x^2">x^2</option>
+			<option value="x^3">x^3</option>
+			<option value="x^y">x^y</option>
+		</select>
+		<br>
+		
+		<button type="button" onclick="izracunaj()">Izračunaj</button>
+	</form>
+</body>
+</html>

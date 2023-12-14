@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML dokument s formom i JS kodom</title>
+	<meta charset="UTF-8">
+	<script>
+		function validirajOznaku(oznaka) {
+			var re = /^[A-Za-z]{1}[0-9]{2}-[A-Za-z]{1}-[0-9]{3}|[A-Za-z]{2}-[0-9]{6}|[0-9]{3}-[A-Za-z]{1}-[0-9]{3}$/;
+			return re.test(oznaka);
+		}
+
+		function validirajFormu() {
+			var oznaka = document.getElementById("oznaka").value;
+			if (validirajOznaku(oznaka)) {
+				alert("Unesena oznaka je ispravna.");
+				return true;
+			} else {
+				alert("Unesena oznaka nije ispravna.\nIspravan format je:\nX00-X-000 ili 000-X-000 za cestovno vozilo\nXX-000000 za Taxi vozila");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="return validirajFormu()">
+		<label for="oznaka">Registarska oznaka vozila:</label>
+		<input type="text" id="oznaka" name="oznaka" required>
+		<button type="submit">Validiraj</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prekidač za žarulju</title>
+	<meta charset="UTF-8">
+	<style>
+		#zarulja {
+			width: 349px;
+			height: 530px;
+			background-image: url('zarulja_off_2.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		#prekidac {
+			width: 174px;
+			height: 336px;
+			background-image: url('off-removebg-preview.png');
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function toggleZarulja() {
+			var zarulja = document.getElementById('zarulja');
+			var prekidac = document.getElementById('prekidac');
+			if (prekidac.classList.contains('on')) {
+				zarulja.style.backgroundImage = 'url("zarulja_off_2.png")';
+				prekidac.style.backgroundImage = 'url("off-removebg-preview.png")';
+				prekidac.classList.remove('on');
+			} else {
+				zarulja.style.backgroundImage = 'url("zarulja_on_2.png")';
+				prekidac.style.backgroundImage = 'url("on-removebg-preview.png")';
+				prekidac.classList.add('on');
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="zarulja"></div>
+	<div id="prekidac" onclick="toggleZarulja()"></div>
+</body>
+</html>

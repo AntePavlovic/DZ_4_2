@@ -1,0 +1,27 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+
+</head> 
+  
+<body> 
+
+ 
+
+<script> 
+function niz1(){
+    var str=prompt('Unesi niz brojeva odvojenih zarezom: ');
+    var niz=str.split(",").map(Number);
+    let arit = niz.reduce((sum, num) => sum + num, 0) / niz.length;
+    let geom = Math.pow(niz.reduce((product, num) => product * num, 1), 1 / niz.length);
+    document.write("<p>Aritmetička sredina: " + arit + "</p>");
+    document.write("<p>Geometrijska sredina: " + geom + "</p>");
+
+    
+}
+niz1()
+</script> 
+</body> 
+  
+</html>
